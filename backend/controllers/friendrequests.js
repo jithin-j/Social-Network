@@ -104,8 +104,7 @@ const removeFriend = async (req, res) => {
 
 const mutualFriends = async (req, res) => {
      const { userId } = req.params;
-     const { otherUserId } = req.body;
-
+     const { otherUserId } = req.params;
      try {
        const user = await User.findById(userId).populate("friends");
        const otherUser = await User.findById(otherUserId).populate("friends");
@@ -148,10 +147,23 @@ const viewFriends = async (req, res) => {
    }
 }
 
+const search = async (req, res) => {
+  const { query } = req.query;
+   try {
+     const users = await User.find({ name: query });
+
+     res.json(users);
+   } catch (error) {
+     console.error(error);
+     res.status(500).json({ message: "Internal server error" });
+   }
+}
+
 module.exports = {
     friendrequest,
     friendrequestAccept,
     removeFriend,
     mutualFriends,
     viewFriends,
+    search,
 };

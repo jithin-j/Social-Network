@@ -1,12 +1,13 @@
 const express = require("express");
 const router = express.Router();
 
-const { friendrequest, friendrequestAccept, removeFriend, mutualFriends, viewFriends } = require("../controllers/friendrequests");
+const { friendrequest, friendrequestAccept, removeFriend, mutualFriends, viewFriends, search } = require("../controllers/friendrequests");
 
 router.post("/friend-request", friendrequest);
 router.put("/friend-request/:userId", friendrequestAccept);
 router.put("/remove-friend/:userId", removeFriend);
-router.get("/mutual-friends/:userId", mutualFriends);
+router.get("/mutual-friends/:userId/:otherUserId", mutualFriends);
 router.get("/view-friends/:userId", viewFriends);
+router.get("/search", search);
 
 module.exports = router;

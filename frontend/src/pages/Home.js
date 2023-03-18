@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import LogoutButton from "../components/LogoutButton";
+import { Link } from "react-router-dom";
 
 const Home = () => {
     const [friends, setFriends] = useState([]);
@@ -16,8 +17,18 @@ const Home = () => {
         // console.log(res.data[0].friends);
       });
     }, []);
+    const id = localStorage.getItem("userid");
+    const friendRequestsURL = `/friends/friend-requests/${id}`;
   return (
     <div>
+      <Link to="/users/search">
+        {" "}
+        <button>Search for friends</button>
+      </Link>
+      <Link to={friendRequestsURL}>
+        {" "}
+        <button>Friend Requests</button>
+      </Link>
       <h1>My Friends</h1>
       <ul>
         {friends.map((friends) => (
@@ -26,7 +37,7 @@ const Home = () => {
           </li>
         ))}
       </ul>
-      <LogoutButton/>
+      <LogoutButton />
     </div>
   );
 };

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
+import FriendRequestButton from "../components/FriendRequestButton";
 
 const User = () => {
   const { id } = useParams();
@@ -23,6 +24,7 @@ const User = () => {
   return (
     <div>
       User {id}
+      <FriendRequestButton user={id}/>
       <h3>Mutual friends: </h3>
       <ul>
         {mutualFriends.map((mutualFriend) => (
@@ -31,6 +33,7 @@ const User = () => {
           </li>
         ))}
       </ul>
+      <a href="/home">Back to home</a>
     </div>
   );
 };

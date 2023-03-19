@@ -4,7 +4,7 @@ import "./css/FriendRequests.css";
 
 const FriendRequests = () => {
   const [friendRequests, setFriendRequests] = useState([]);
-  const [friendsName, setFriendsName] = useState([]);
+  // const [friendsName, setFriendsName] = useState([]);
   useEffect(() => {
     const getFriendRequests = async () => {
       try {
@@ -26,26 +26,26 @@ const FriendRequests = () => {
     };
     getFriendRequests();
   }, []);
-  const getFriendsName = async () => {
-    const token = localStorage.getItem("token");
-    const config = {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    };
-    const requests = friendRequests.map((friend) =>
-      axios.get(
-        `http://localhost:3000/api/v1/friends/searchId?query=` + friend,
-        config
-      )
-    );
-    axios.all(requests).then((responses) => {
-      responses.forEach((response) => {
-        console.log(response.data[0].name);
-        setFriendsName([...friendsName, response.data[0].name]);
-      });
-    });
-  };
+  // const getFriendsName = async () => {
+  //   const token = localStorage.getItem("token");
+  //   const config = {
+  //     headers: {
+  //       Authorization: `Bearer ${token}`,
+  //     },
+  //   };
+  //   const requests = friendRequests.map((friend) =>
+  //     axios.get(
+  //       `http://localhost:3000/api/v1/friends/searchId?query=` + friend,
+  //       config
+  //     )
+  //   );
+  //   axios.all(requests).then((responses) => {
+  //     responses.forEach((response) => {
+  //       console.log(response.data[0].name);
+  //       setFriendsName([...friendsName, response.data[0].name]);
+  //     });
+  //   });
+  // };
   const handleAccept = async (friendId, status) => {
     const token = localStorage.getItem("token");
     const config = {

@@ -1,7 +1,16 @@
 const express = require("express");
 const router = express.Router();
 
-const { friendrequest, friendrequestAccept, removeFriend, mutualFriends, viewFriends, search, searchById } = require("../controllers/friendrequests");
+const {
+  friendrequest,
+  friendrequestAccept,
+  removeFriend,
+  mutualFriends,
+  viewFriends,
+  search,
+  searchById,
+  viewFriendRequests
+} = require("../controllers/friendrequests");
 
 router.post("/friend-request", friendrequest);
 router.put("/friend-request/:userId", friendrequestAccept);
@@ -9,6 +18,7 @@ router.put("/remove-friend/:userId", removeFriend);
 router.get("/mutual-friends/:userId/:otherUserId", mutualFriends);
 router.get("/view-friends/:userId", viewFriends);
 router.get("/search", search);
-router.get("/searchId", searchById)
+router.get("/searchId", searchById);
+router.get("/viewFriendRequests/:userId", viewFriendRequests);
 
 module.exports = router;

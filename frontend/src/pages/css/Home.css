@@ -1,0 +1,109 @@
+.buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 1%;
+    /* margin-top: 1rem; */
+}
+.buttons button {
+position: relative;
+    height: 50px;
+    padding: 0 30px;
+    border: 2px solid #000;
+    background: #e8e8e8;
+    user-select: none;
+    white-space: nowrap;
+    transition: all .05s linear;
+    font-family: inherit;
+}
+
+.buttons button::before, .buttons button::after {
+content: "";
+    position: absolute;
+    background: #e8e8e8;
+    transition: all .2s linear;
+}
+
+.buttons button::before{
+    width: calc(100% + 6px);
+        height: calc(100% - 16px);
+        top: 8px;
+        left: -3px;
+}
+.buttons button::after {
+    width: calc(100% - 16px);
+        height: calc(100% + 6px);
+        top: -3px;
+        left: 8px;
+}
+.buttons button:hover {
+cursor: crosshair;
+}
+.buttons button:active{
+    transform: scale(0.95);
+}
+.buttons button:hover::before {
+    height: calc(100% - 32px);
+        top: 16px;
+}
+.buttons button:hover::after {
+    width: calc(100% - 32px);
+        left: 16px;
+}
+.buttons button span{
+
+            font-size: 15px;
+            z-index: 3;
+            position: relative;
+            font-weight: 600;
+        
+}
+h1{
+    margin-left: 1rem;
+}
+.friends-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* align-items: center; */
+    margin-left: 10rem;
+    margin-right: 10rem;
+    margin-top: 4rem;
+    height: 70vh;
+    background: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 1rem;
+}
+
+.container{
+        background: linear-gradient(300deg, #3976ff, #ffffff);
+            background-size: 120% 120%;
+            animation: gradient-animation 6s ease infinite;
+            height: 100vh;
+}
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.left-side p{
+    font-size: 4rem;
+    font-weight: 200;
+}
+.lottie{
+    position: absolute;
+    left: 20%;
+    top: 20%;
+}

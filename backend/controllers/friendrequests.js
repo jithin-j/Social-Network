@@ -173,6 +173,26 @@ const searchById = async (req, res) => {
   }
 };
 
+const viewFriendRequests = async (req, res) => {
+    const { userId } = req.params;
+    try {
+      // Find the user by their id
+      const user = await User.findById(userId);
+
+      if (!user) {
+        return res.status(404).json({ message: "User not found" });
+      }
+
+      // Retrieve the user's friends based on their ids
+      const friends = await User.find({ _id: { $in: user.friendRequestsReceived } });
+
+      res.status(200).json(friends);
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ message: "Server error" });
+    }
+}
+
 module.exports = {
   friendrequest,
   friendrequestAccept,
@@ -181,4 +201,5 @@ module.exports = {
   viewFriends,
   search,
   searchById,
+  viewFriendRequests,
 };

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import "./css/Auth.css"
 
 const Auth = () => {
   const navigate = useNavigate();
@@ -55,60 +55,70 @@ const Auth = () => {
   };
 
   return (
-    <div>
-      <h2>{isSignUp ? "Sign Up" : "Sign In"}</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        {isSignUp && (
-          <>
-            <div>
-              <label htmlFor="confirmPassword">Confirm Password:</label>
-              <input
-                type="password"
-                name="confirmPassword"
-                value={formData.confirmPassword}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div>
-              <label htmlFor="name">Name:</label>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-              />
-            </div>
-          </>
-        )}
-        <button type="submit">{isSignUp ? "Sign Up" : "Sign In"}</button>
-      </form>
-      <button onClick={() => setIsSignUp((prev) => !prev)}>
-        {isSignUp
-          ? "Already have an account? Sign In"
-          : "Don't have an account? Sign Up"}
-      </button>
+    <div className="holder">
+      <p className="heading">Welcome to the social network.</p>
+      <div className="login-box">
+        <h2>{isSignUp ? "Sign Up" : "Sign In"}</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="user-box">
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+            <label htmlFor="email">Email:</label>
+          </div>
+          <div className="user-box">
+            <input
+              type="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
+            <label htmlFor="password">Password:</label>
+          </div>
+          {isSignUp && (
+            <>
+              <div className="user-box">
+                <input
+                  type="password"
+                  name="confirmPassword"
+                  value={formData.confirmPassword}
+                  onChange={handleChange}
+                  required
+                />
+                <label htmlFor="confirmPassword">Confirm Password:</label>
+              </div>
+              <div className="user-box">
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                />
+                <label htmlFor="name">Name:</label>
+              </div>
+            </>
+          )}
+          <button type="submit">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            {isSignUp ? "Sign Up" : "Sign In"}
+          </button>
+        </form>
+        <br/>
+        <button onClick={() => setIsSignUp((prev) => !prev)} className="a2">
+          {isSignUp
+            ? "Already have an account? Sign In"
+            : "Don't have an account? Sign Up"}
+        </button>
+      </div>
     </div>
   );
 };

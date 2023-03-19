@@ -52,7 +52,7 @@ const UserSchema = new mongoose.Schema({
 });
 
 UserSchema.pre("save", async function (next) {
-  if(!this.isModified("password")) {
+  if (!this.isModified("password")) {
     return next();
   }
   try {
@@ -60,7 +60,7 @@ UserSchema.pre("save", async function (next) {
     this.password = await bcrypt.hash(this.password, salt);
     next();
   } catch (error) {
-      next(error);
+    next(error);
   }
 });
 
@@ -76,9 +76,6 @@ UserSchema.methods.createJWT = function () {
 
 UserSchema.methods.comparePassword = async function (candidatePassword) {
   const isMatch = await bcrypt.compare(candidatePassword, this.password);
-  console.log(candidatePassword);
-  console.log(this.password);
-  console.log(isMatch);
   return isMatch;
 };
 

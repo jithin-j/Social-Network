@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "./css/FriendRequests.css";
 
 const FriendRequests = () => {
   const [friendRequests, setFriendRequests] = useState([]);
@@ -67,21 +68,36 @@ const FriendRequests = () => {
   // getFriendsName();
   console.log(friendRequests);
   return (
-    <div>
-      {friendRequests.length !== 0 ? (
-        friendRequests.map((friend) => (
-          <div key={friend.name}>
-            <p>{friend.name} sent you a friend request</p>
-            <button onClick={() => handleAccept(friend._id, true)}>Accept</button>
-            <button onClick={() => handleAccept(friend._id, false)}>Delete</button>
-          </div>
-        ))
-      ) : (
-        <>
-          <p>No friend requests</p>
-          <a href="/home">Go back to home</a>
-        </>
-      )}
+    <div className="container6">
+      <a href="/home">Go back to home</a>
+      <p className="req-heading">Friend requests.</p>
+      <div className="container5">
+        {friendRequests.length !== 0 ? (
+          friendRequests.map((friend) => (
+            <div key={friend.name}>
+              <p className="friend-name">
+                {friend.name} sent you a friend request
+              </p>
+              <button
+                onClick={() => handleAccept(friend._id, true)}
+                className="AcceptButton"
+              >
+                Accept
+              </button>
+              <button
+                onClick={() => handleAccept(friend._id, false)}
+                className="RejectButton"
+              >
+                Delete
+              </button>
+            </div>
+          ))
+        ) : (
+          <>
+            <p>No friend requests</p>
+          </>
+        )}
+      </div>
     </div>
   );
 };

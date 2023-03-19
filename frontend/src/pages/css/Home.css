@@ -73,6 +73,7 @@ h1{
     margin-right: 10rem;
     margin-top: 4rem;
     height: 70vh;
+    width: 60vw;
     background: white;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 1rem;
@@ -104,6 +105,25 @@ h1{
 }
 .lottie{
     position: absolute;
-    left: 20%;
+    left: 24%;
     top: 20%;
+}
+.usercard{
+    background: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 13rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 4rem;
+    margin: 1rem;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: black;
 }

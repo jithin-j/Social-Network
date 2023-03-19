@@ -17,17 +17,17 @@ const FriendRequestButton = ({ user }) => {
         const url =
           "http://localhost:3000/api/v1/friends/searchId?query=" + currentUser;
         const response = await axios.get(url, config);
-        console.log(response.data);
-        console.log("Current user id: " + currentUser);
-        console.log(response.data[0].name);
-        console.log(user);
+        // console.log(response.data);
+        // console.log("Current user id: " + currentUser);
+        // console.log(response.data[0].name);
+        // console.log(user);
         if (response.data[0].friendRequestsSent.includes(user)) {
           setIsFriendRequestSent("pending");
-          console.log("friend request pending");
+          // console.log("friend request pending");
         }
         if (response.data[0].friends.includes(user)) {
           setIsFriendRequestSent("friends");
-          console.log("already friends");
+          // console.log("already friends");
         }
         if (
           !response.data[0].friendRequestsSent.includes(user) &&

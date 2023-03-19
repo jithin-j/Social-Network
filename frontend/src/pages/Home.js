@@ -3,6 +3,7 @@ import axios from "axios";
 import LogoutButton from "../components/LogoutButton";
 import { Link } from "react-router-dom";
 import "./css/Home.css";
+import userImg from "../images/user.png"
 
 const Home = () => {
   const [friends, setFriends] = useState([]);
@@ -42,10 +43,10 @@ const Home = () => {
           <p>My Friends</p>
           <div className="lottie">
             <lottie-player
-              src="https://assets6.lottiefiles.com/packages/lf20_2cghrrpi.json"
+              src="https://assets6.lottiefiles.com/packages/lf20_f2jo61ci.json"
               background="transparent"
               speed="1"
-              style={{"width": "500px", "height": "500px"}}
+              style={{ width: "500px", height: "500px" }}
               loop
               autoplay
             ></lottie-player>
@@ -55,7 +56,12 @@ const Home = () => {
           <ul>
             {friends.map((friends) => (
               <li key={friends._id}>
-                <a href={`/friends/${friends._id}`}>{friends.name}</a>
+                <Link to={`/friends/${friends._id}`}>
+                  <div className="usercard">
+                    <img src={userImg} alt="profile" />
+                    <a href={`/friends/${friends._id}`}>{friends.name}</a>
+                  </div>
+                </Link>
               </li>
             ))}
           </ul>

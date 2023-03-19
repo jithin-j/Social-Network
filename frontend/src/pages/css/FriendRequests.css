@@ -1,0 +1,51 @@
+.container5{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.req-heading{
+    font-size: 3.5rem;
+    text-align: center;
+    font-weight: 500;
+    margin: 0;
+}
+.container6{
+    background: linear-gradient(300deg, #3976ff, #ffffff);
+    background-size: 120% 120%;
+    animation: gradient-animation 6s ease infinite;
+    height: 100vh;
+}
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.AcceptButton{
+    width: 7rem;
+    height: 2rem;
+    margin-left: 0.4rem;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+}
+
+.RejectButton{
+    width: 7rem;
+    height: 2rem;
+    margin-left: 0.4rem;
+    background-color: red;
+    border-radius: 0.5rem;
+}
+.friend-name{
+    font-size: 1.2rem;
+    font-weight: 400;
+}

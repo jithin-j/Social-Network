@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./css/Search.css"
+import { Link } from "react-router-dom";
+import userImg from "../images/user.png";
 
 function Search() {
   const [query, setQuery] = useState("");
@@ -24,14 +27,38 @@ function Search() {
   };
 
   return (
-    <div>
-      <input type="text" value={query} onChange={handleQueryChange} />
-      <button onClick={handleSearch}>Search</button>
-      {results.map((user) => (
-        <div key={user._id}>
-          <a href={`/friends/${user._id}`}>{user.name}</a>
-        </div>
-      ))}
+    <div className="container">
+      <p>Search for users here.</p>
+      <div className="textInputWrapper">
+        <input
+          type="text"
+          value={query}
+          onChange={handleQueryChange}
+          className="textInput"
+          placeholder="Search Here"
+        />
+      </div>
+      <div className="search-button">
+        <button onClick={handleSearch}>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span> Search
+        </button>
+      </div>
+      <div className="results">
+        {results.map((user) => (
+          <div key={user._id}>
+            <Link to={`/friends/${user._id}`}>
+              <div className="usercard">
+                <img src={userImg} alt="profile" />
+                <a href={`/friends/${user._id}`}>{user.name}</a>
+              </div>
+            </Link>
+            {/* <a href={`/friends/${user._id}`}>{user.name}</a> */}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

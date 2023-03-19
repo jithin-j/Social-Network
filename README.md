@@ -18,7 +18,7 @@ This is a social network app where users can sign up, create profiles, add frien
 </ul>
 
 <h2>Demo</h2>
-Here is a link to a demo video: <a href="#">Link</a>
+Here is a link to a demo video: <a href="https://www.loom.com/share/67c05aef1a814fe1956420680f905f43">Video</a>
 
 <h2>Steps to run the code</h2>
 <ul>

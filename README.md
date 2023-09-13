@@ -18,7 +18,7 @@ This is a social network app where users can sign up, create profiles, add frien
 </ul>
 
 <h2>Demo</h2>
-Here is a link to a demo video: <a href="#">Link</a>
+Here is a link to a demo video: <a href="https://www.loom.com/share/67c05aef1a814fe1956420680f905f43">Video</a>
 
 <h2>Steps to run the code</h2>
 <ul>
@@ -30,7 +30,7 @@ Here is a link to a demo video: <a href="#">Link</a>
     <li>In another terminal, start the frontend server: cd ../frontend && npm start</li>
     <li>The app should now be running on http://localhost:3001</li>
 </ul>
-Note: Make sure to set up a MongoDB database and update the MONGODB_URI variable in the .env file with your database URI.
+Note: Make sure to set up a MongoDB database and update the MONGODB_URI variable in the .env file with your database URI. Also set up JWT_SECRET and JWT_LIFETIME in .env file.
 
 <h2>Conclusion</h2>
 This social network app is a basic implementation of social media functionalities using React, Node.js, and MongoDB. The app can be improved by adding more features such as messaging, notifications, and user search.

@@ -3,6 +3,7 @@ import axios from "axios";
 import "./css/Search.css"
 import { Link } from "react-router-dom";
 import userImg from "../images/user.png";
+import backButton from "../images/back.png";
 
 function Search() {
   const [query, setQuery] = useState("");
@@ -28,7 +29,8 @@ function Search() {
 
   return (
     <div className="container">
-      <p>Search for users here.</p>
+      <a href="/home"><img src={backButton} alt="backButton" className="backButton"/></a>
+      <p>Search for users here</p>
       <div className="textInputWrapper">
         <input
           type="text"

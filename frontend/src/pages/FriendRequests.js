@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./css/FriendRequests.css";
+import backButton from "../images/back.png";
 
 const FriendRequests = () => {
   const [friendRequests, setFriendRequests] = useState([]);
@@ -69,7 +70,7 @@ const FriendRequests = () => {
   console.log(friendRequests);
   return (
     <div className="container6">
-      <a href="/home">Go back to home</a>
+      <a href="/home"><img src={backButton} alt="backButton" className="backButton"/></a>
       <p className="req-heading">Friend requests.</p>
       <div className="container5">
         {friendRequests.length !== 0 ? (

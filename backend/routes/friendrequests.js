@@ -9,7 +9,8 @@ const {
   viewFriends,
   search,
   searchById,
-  viewFriendRequests
+  viewFriendRequests, 
+  viewUser
 } = require("../controllers/friendrequests");
 
 router.post("/friend-request", friendrequest);
@@ -20,5 +21,6 @@ router.get("/view-friends/:userId", viewFriends);
 router.get("/search", search);
 router.get("/searchId", searchById);
 router.get("/viewFriendRequests/:userId", viewFriendRequests);
+router.get("/viewUser/:userId", viewUser);
 
 module.exports = router;

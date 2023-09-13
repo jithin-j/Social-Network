@@ -30,8 +30,8 @@ app.use(cors());
 app.use(xss());
 app.use(
   rateLimiter({
-    windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 100, //limit each IP to 100 requests per windowMS
+    windowMs: 30 * 60 * 1000, // 15 minutes
+    max: 1000, //limit each IP to 100 requests per windowMS
   })
 );
 

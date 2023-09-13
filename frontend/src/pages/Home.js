@@ -43,7 +43,7 @@ const Home = () => {
           <p>My Friends</p>
           <div className="lottie">
             <lottie-player
-              src="https://assets6.lottiefiles.com/packages/lf20_f2jo61ci.json"
+              src="https://lottie.host/2bcd88b9-86f8-4677-af8e-dce35b2337da/WguwXmO3w1.json"
               background="transparent"
               speed="1"
               style={{ width: "500px", height: "500px" }}

@@ -11,8 +11,15 @@
     font-weight: 500;
     margin: 0;
 }
+.backButton{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3rem;
+    margin: 1rem;
+}
 .container6{
-    background: linear-gradient(300deg, #3976ff, #ffffff);
+    background: linear-gradient(300deg, #000, #ffffff);
     background-size: 120% 120%;
     animation: gradient-animation 6s ease infinite;
     height: 100vh;
@@ -33,17 +40,23 @@
 .AcceptButton{
     width: 7rem;
     height: 2rem;
-    margin-left: 0.4rem;
+    margin-left: 1rem;
     background-color: #ffffff;
     border-radius: 0.5rem;
 }
-
+.AcceptButton:hover{
+    transform: scale(1.1);
+}
 .RejectButton{
     width: 7rem;
     height: 2rem;
-    margin-left: 0.4rem;
-    background-color: red;
+    margin-left: 1rem;
+    background-color: black;
     border-radius: 0.5rem;
+    color: #ffffff;
+}
+.RejectButton:hover{
+    transform: scale(1.1);
 }
 .friend-name{
     font-size: 1.2rem;

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./css/Auth.css"
+import Typewriter from "typewriter-effect";
+
 
 const Auth = () => {
   const navigate = useNavigate();
@@ -56,7 +58,17 @@ const Auth = () => {
 
   return (
     <div className="holder">
-      <p className="heading">Welcome to the social network.</p>
+      <div className="heading">
+        <Typewriter
+          options={{
+            strings: ["Welcome to the Social Network"],
+            autoStart: true,
+            loop: true,
+            cursor: "_",
+            pauseFor: 10000,
+          }}
+        />
+      </div>
       <div className="login-box">
         <h2>{isSignUp ? "Sign Up" : "Sign In"}</h2>
         <form onSubmit={handleSubmit}>

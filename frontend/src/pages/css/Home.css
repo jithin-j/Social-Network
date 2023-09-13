@@ -6,14 +6,15 @@
     align-items: center;
     position: relative;
     top: 1%;
-    /* margin-top: 1rem; */
+    margin-top: 1.2rem;
 }
 .buttons button {
 position: relative;
     height: 50px;
     padding: 0 30px;
-    border: 2px solid #000;
-    background: #e8e8e8;
+    color: #fff;
+    border: 2px solid #fff;
+    background: #333333;
     user-select: none;
     white-space: nowrap;
     transition: all .05s linear;
@@ -23,7 +24,7 @@ position: relative;
 .buttons button::before, .buttons button::after {
 content: "";
     position: absolute;
-    background: #e8e8e8;
+    background: #333333;
     transition: all .2s linear;
 }
 
@@ -61,8 +62,12 @@ cursor: crosshair;
             font-weight: 600;
         
 }
-h1{
-    margin-left: 1rem;
+
+.right-side{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 .friends-box{
     display: flex;
@@ -74,13 +79,14 @@ h1{
     margin-top: 4rem;
     height: 70vh;
     width: 60vw;
-    background: white;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background: #424242;
+    border: #000 solid 1px;
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 7px 29px 0px;
     border-radius: 1rem;
 }
 
 .container{
-        background: linear-gradient(300deg, #3976ff, #ffffff);
+        background: linear-gradient(300deg, #000, #ffffff);
             background-size: 120% 120%;
             animation: gradient-animation 6s ease infinite;
             height: 100vh;
@@ -100,8 +106,11 @@ h1{
 }
 
 .left-side p{
+    text-align: center;
     font-size: 4rem;
-    font-weight: 200;
+    color: #ffffff;
+    text-decoration: underline 1px;
+    font-style: italic;
 }
 .lottie{
     position: absolute;
@@ -109,21 +118,42 @@ h1{
     top: 20%;
 }
 .usercard{
-    background: white;
+    background: #333333;
+    border: #fff solid 1px;
+    color: #fff;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    width: 13rem;
-    border-radius: 1rem;
+    width: 20rem;
+    border-radius: 0.5rem;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 0rem 3rem;
+    box-sizing: border-box;
     align-items: center;
     height: 4rem;
     margin: 1rem;
+}
+.usercard:hover{
+    cursor: pointer;
+    background: #232023;
+    border: #000 solid 1px;
+    width: 20rem;
+    color: #fff;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0rem 3rem;
+    box-sizing: border-box;
+    align-items: center;
+    height: 4rem;
+    margin: 1rem;
+    transform: scale(1.05);
 }
 li{
     list-style: none;
 }
 a{
     text-decoration: none;
-    color: black;
+    color: #fff;
 }
